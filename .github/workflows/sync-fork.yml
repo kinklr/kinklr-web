@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync fork
-        run: |
-          gh api --method POST \
-            /repos/ConnorK328/kinklr-web/merge-upstream \
-            -f branch=main
+        run: gh api --method POST /repos/ConnorK328/kinklr-web/merge-upstream -f branch=main
         env:
           GH_TOKEN: ${{ secrets.FORK_SYNC_TOKEN }}
